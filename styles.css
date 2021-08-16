@@ -10,6 +10,17 @@ h1 {
     font-weight: bold;
 }
 
+footer {
+    text-align: center;
+}
+
+a {
+    color: gold;
+    font-size: 13px;
+    font-family: orbitron;
+    font-weight: bold;
+}
+
 #container {
     display: grid;
     background-color: white;
