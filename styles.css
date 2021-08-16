@@ -1,38 +1,52 @@
-html{
+html {
     background-color: black;
 }
 
-#container{
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    height: 80vh;
-    grid-template-columns: repeat(16, 30px);
-    grid-template-rows: repeat(16, 30px);
+h1 {
+    color: gold;
+    text-align: center;
+    font-size: 70px;
+    font-family: orbitron;
+    font-weight: bold;
 }
 
-#container>div{
+#container {
+    display: grid;
     background-color: white;
+    justify-content: center;
+    align-content: center;
+    --grid-amount: 16;
+    height: 600px;
+    width: 600px;
+    margin: auto;
+    grid-template-rows: repeat(var(--grid-amount), minmax(auto, 480px));
+    grid-template-columns: repeat(var(--grid-amount), minmax(auto, 480px));
+}
+
+#container>div {
     border-color: grey;
     border-style: solid;
+    border-width: thin;
 }
 
-#buttons{
-    display: grid;
+#buttons {
+    margin: 40px;
+    display: flex;
     justify-content: center;
     align-content: center;
-
-    
+    grid: columns;
+    gap: 20px;
 }
 
-#buttons>button{
-    width: 80px;
+#buttons>button {
+    width: 120px;
     height: 40px;
-    float: center;
     align-items: center;
     justify-content: center;
     border-radius: 30px;
-    color: coral;
-    
+    border-color: gold;
+    border-width: thick;
+    color: black;
+    font-size: 14px;
+    font-family: orbitron;
 }
-
