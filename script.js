@@ -5,9 +5,7 @@ const zoomOutBtn = document.querySelector("#z-out");
 const resetBtn = document.querySelector("#reset");
 let gridAmt = 16;
 
-
 function createGridAmount(amount) {
-
     if (amount > 56) {
         amount = 56;
         zoomOutBtn.disabled = true;
@@ -16,11 +14,10 @@ function createGridAmount(amount) {
 
     container.setAttribute("style", `--grid-amount: ${amount}`);
     for (let count = 1; count <= limit; count++) {
-        let temp = document.createElement('div');
+        let temp = document.createElement("div");
         temp.setAttribute("id", childId + count);
         container.appendChild(temp);
     }
-
 }
 
 /*
@@ -30,7 +27,7 @@ when when your mouse passes over them.
 */
 function loadGrid(defaultGrid) {
     createGridAmount(defaultGrid);
-    document.querySelectorAll("#container>div").forEach(box => {
+    document.querySelectorAll("#container>div").forEach((box) => {
         box.addEventListener("mouseover", changeColor);
     });
 }
@@ -40,13 +37,13 @@ Function that removes the old grid and creates the new one.
 */
 function zoomOut() {
     removeOldGrid();
-    gridAmt += 10
-    loadGrid(gridAmt)
+    gridAmt += 10;
+    loadGrid(gridAmt);
 }
 
 function removeOldGrid() {
     clearColor();
-    document.querySelectorAll("#container>div").forEach(n => n.remove());
+    document.querySelectorAll("#container>div").forEach((n) => n.remove());
 }
 
 function changeColor() {
@@ -57,18 +54,16 @@ function changeColor() {
 Function that generates a random RGBA color.
 */
 function randomRGBA(e) {
-    let red = Math.floor(Math.random() * 256);;
-    let green = Math.floor(Math.random() * 256);;
-    let blue = Math.floor(Math.random() * 256);;
+    let red = Math.floor(Math.random() * 256);
+    let green = Math.floor(Math.random() * 256);
+    let blue = Math.floor(Math.random() * 256);
     return `rgba(${red}, ${green}, ${blue})`;
-
 }
 
 function clearColor(e) {
-    document.querySelectorAll("#container>div").forEach(box => {
+    document.querySelectorAll("#container>div").forEach((box) => {
         box.setAttribute("style", "background-color: white");
     });
-
 }
 
 function resetGrid(e) {
@@ -77,7 +72,6 @@ function resetGrid(e) {
     loadGrid(gridAmt);
     zoomOutBtn.disabled = false;
 }
-
 
 loadGrid(gridAmt);
 zoomOutBtn.addEventListener("click", zoomOut);

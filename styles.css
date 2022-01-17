@@ -1,5 +1,6 @@
-html {
+body {
     background-color: black;
+    margin: 0px;
 }
 
 h1 {
@@ -45,7 +46,6 @@ a {
     display: flex;
     justify-content: center;
     align-content: center;
-    grid: columns;
     gap: 20px;
 }
 
@@ -60,4 +60,16 @@ a {
     color: black;
     font-size: 14px;
     font-family: orbitron;
+}
+
+#buttons>button:hover,
+#buttons>button:focus {
+    cursor: pointer;
+    box-shadow: 5px 5px 5px gold;
+}
+
+#z-out:disabled {
+    box-shadow: none;
+    pointer-events: none;
+    opacity: 0.3
 }
