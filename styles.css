@@ -66,10 +66,12 @@ a {
 #buttons>button:focus {
     cursor: pointer;
     box-shadow: 5px 5px 5px gold;
+    transform: scale(1.1)
 }
 
 #z-out:disabled {
     box-shadow: none;
     pointer-events: none;
-    opacity: 0.3
+    opacity: 0.3;
+    transform: scale(1.1)
 }
